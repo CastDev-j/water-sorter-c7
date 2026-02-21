@@ -84,7 +84,7 @@ export function StepStructure({
         </Card>
       </div>
 
-      <Card className="bg-secondary-background p-6 w-full flex flex-row items-center justify-center overflow-x-scroll">
+      <Card className="bg-secondary-background p-6 w-full flex flex-row items-center justify-center overflow-x-auto">
         {tubes.map((tube, i) => (
           <div
             key={`fill-${i}`}
