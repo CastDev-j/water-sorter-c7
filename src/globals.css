@@ -19,6 +19,9 @@
     --chart-4: #05E17A;
     --chart-5: #7A83FF;
     --chart-active-dot: #000;
+    --scrollbar-track: var(--secondary-background);
+    --scrollbar-thumb: var(--border);
+    --scrollbar-thumb-hover: var(--main);
 }
 
 .dark {
@@ -36,6 +39,9 @@
     --chart-4: #04C86D;
     --chart-5: #7A83FF;
     --chart-active-dot: #fff;
+    --scrollbar-track: var(--secondary-background);
+    --scrollbar-thumb: var(--border);
+    --scrollbar-thumb-hover: var(--main);
 }
 
 @theme inline {
@@ -64,6 +70,32 @@
 }
 
 @layer base {
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    }
+
+    *::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+        border: 2px solid var(--border);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border: 2px solid var(--border);
+        border-radius: 0;
+        box-shadow: 2px 2px 0 0 var(--border);
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover);
+    }
+
     body {
         @apply text-foreground font-base bg-background;
     }
